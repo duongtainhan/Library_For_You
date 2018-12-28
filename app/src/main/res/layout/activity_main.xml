@@ -1,11 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/bg_original">
+    <TextView
+        android:id="@+id/txtDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demo Library Android"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/dim"
+        android:textSize="35sp"
+        android:fontFamily="@font/sofia"
+        android:textStyle="bold|italic"
+        android:visibility="invisible"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtTeam"
+        android:text="GROUP 11 "
+        android:textStyle="bold"
+        android:textColor="@color/dim2"
+        android:textSize="35sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtDemo"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtName"
+        android:text="Dương Tài Nhân\nLê Ngọc Thành\nNguyễn Lê Trung"
+        android:textColor="@color/dim1"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/txtTeam"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
