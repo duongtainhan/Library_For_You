@@ -13,12 +13,12 @@
         android:layout_height="wrap_content"
         android:text="Demo Library Android"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:textColor="@color/dim"
-        android:textSize="35sp"
+        android:textSize="@dimen/_30sdp"
         android:fontFamily="@font/sofia"
         android:textStyle="bold|italic"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/txtDemo"
         android:layout_marginTop="20dp"
-        android:visibility="invisible"/>
+        android:visibility="visible"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -41,8 +41,8 @@
         android:textStyle="italic"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/txtTeam"
-        android:layout_marginTop="20dp"
-        android:visibility="invisible"/>
+        android:layout_marginTop="@dimen/_20sdp"
+        android:visibility="visible"/>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
