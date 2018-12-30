@@ -33,7 +33,7 @@ public class GetItemYoutube {
     private Context context;
     private ListView listVideo;
 
-    private void LoadJSON(String key, String key_search, int maxResult, Context context, ListView listVideo)
+    public void LoadJSON(String key, String key_search, int maxResult, Context context, ListView listVideo)
     {
         compositeDisposable = new CompositeDisposable();
         videoItem = new VideoItem();
@@ -60,7 +60,7 @@ public class GetItemYoutube {
         compositeDisposable.add(disposable);
     }
 
-    private void handleResponse(VideoItem itemVideo) {
+    public void handleResponse(VideoItem itemVideo) {
         arrayItems = new ArrayList<>();
         videoItem = itemVideo;
         for(int i=0;i<videoItem.getItems().size();i++)
@@ -75,11 +75,11 @@ public class GetItemYoutube {
         videoAdapter = new VideoAdapter(context,R.layout.layout_video,arrayItems);
         listVideo.setAdapter(videoAdapter);
     }
-    private String handleError(Throwable error) {
+    public String handleError(Throwable error) {
         return "Error " + error.getLocalizedMessage();
     }
 
-    private String handleSuccess() {
+    public String handleSuccess() {
         return "Connected";
     }
 }

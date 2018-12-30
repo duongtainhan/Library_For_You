@@ -19,8 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReadingNews.SelectPage.activity.SelectPageActivity" />
-        <activity
-            android:name=".ReadingNews.ViewNews.ViewNewsActivity"></activity>
+        <activity android:name=".ReadingNews.ViewNews.ViewNewsActivity" />
+        <activity android:name=".ReadingNews.SearchYoutube.SearchYoutubeActivity"></activity>
     </application>
 
 </manifest>
