@@ -1,8 +1,13 @@
 package android.dienty.foryou.YoutubeMini;
 
+import android.content.Context;
 import android.dienty.foryou.YoutubeMini.Interface.RequestInterface;
 import android.dienty.foryou.YoutubeMini.Models.Item;
 import android.dienty.foryou.YoutubeMini.Models.VideoItem;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
@@ -18,19 +23,23 @@ import okhttp3.OkHttpClient;
 import okhttp3.Protocol;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import android.dienty.foryou.R;
 
 public class GetItemYoutube {
     private CompositeDisposable compositeDisposable;
     private VideoItem videoItem;
     private ArrayList<Item> arrayItems;
-    private static final String base_url="https://www.googleapis.com/youtube/v3/";
+    private VideoAdapter videoAdapter;
+    private Context context;
+    private ListView listVideo;
 
-    public void loadJSON(String keyYoutube, String keySearch, int maxResult)
+    private void LoadJSON(String key, String key_search, int maxResult, Context context, ListView listVideo)
     {
-        String numberOfResult = String.valueOf(maxResult);
         compositeDisposable = new CompositeDisposable();
         videoItem = new VideoItem();
-        arrayItems = new ArrayList<>();
+        this.context = context;
+        this.listVideo = listVideo;
+        String maxVideo = String.valueOf(maxResult);
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .readTimeout(10, TimeUnit.SECONDS)
                 .writeTimeout(10,TimeUnit.SECONDS)
@@ -40,17 +49,19 @@ public class GetItemYoutube {
                 .build();
         RequestInterface requestInterface = new Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl(base_url)
+                .baseUrl("https://www.googleapis.com/youtube/v3/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build().create(RequestInterface.class);
-        Disposable disposable = requestInterface.register("snippet",keySearch,numberOfResult,"video",keyYoutube)
+        Disposable disposable = requestInterface.register("snippet",key_search,maxVideo,"video",key)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe(this::handleResponse, this::handleError, this::handleSuccess);
         compositeDisposable.add(disposable);
     }
-    public ArrayList<Item> handleResponse(VideoItem itemVideo) {
+
+    private void handleResponse(VideoItem itemVideo) {
+        arrayItems = new ArrayList<>();
         videoItem = itemVideo;
         for(int i=0;i<videoItem.getItems().size();i++)
         {
@@ -58,15 +69,17 @@ public class GetItemYoutube {
             item.setSnippet(videoItem.getItems().get(i).getSnippet());
             item.setId(videoItem.getItems().get(i).getId());
             arrayItems.add(item);
+            //Log.d("BBB",videoItems2.getItems().get(i).getSnippet().getThumbnails().getMedium().getUrl());
         }
-        return arrayItems;
+        //Log.d("CCC",arrayItems.get(1).getId().getVideoId());
+        videoAdapter = new VideoAdapter(context,R.layout.layout_video,arrayItems);
+        listVideo.setAdapter(videoAdapter);
     }
-    public String handleError(Throwable error) {
-
+    private String handleError(Throwable error) {
         return "Error " + error.getLocalizedMessage();
     }
 
-    public String handleSuccess() {
-        return "successful connection";
+    private String handleSuccess() {
+        return "Connected";
     }
 }

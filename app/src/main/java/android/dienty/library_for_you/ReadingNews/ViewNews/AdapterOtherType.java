@@ -11,12 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 import android.dienty.library_for_you.R;
 
 public class AdapterOtherType extends ArrayAdapter<FeedItem> {
+
     public AdapterOtherType(@NonNull Context context, int resource, @NonNull List<FeedItem> objects) {
         super(context, resource, objects);
     }
@@ -35,7 +36,7 @@ public class AdapterOtherType extends ArrayAdapter<FeedItem> {
             TextView txtTitle = view.findViewById(R.id.txtTypeTitle);
             txtTitle.setText(feedItem.getTitle());
             ImageView imgThumbnail = view.findViewById(R.id.imgTypeThumbnail);
-            Picasso.get().load(feedItem.getThumbnail()).into(imgThumbnail);
+            Glide.with(getContext()).load(feedItem.getThumbnail()).into(imgThumbnail);
         }
         return view;
     }

@@ -6,7 +6,6 @@ public class FeedItem {
     private String pubDate;
     private String thumbnail;
     private String link;
-    private String name;
 
     public FeedItem(String title, String description, String pubDate, String thumbnail, String link) {
         this.title = title;

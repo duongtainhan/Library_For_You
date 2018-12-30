@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 import android.dienty.library_for_you.R;
@@ -42,7 +42,7 @@ public class NewsAdapter extends ArrayAdapter<FeedItem>{
             txtTitle.setText(feedItem.getTitle());
             Log.d("TITLE",feedItem.getTitle());
             ImageView imgThumbnail = view.findViewById(R.id.imgThumbnail);
-            Picasso.get().load(feedItem.getThumbnail()).into(imgThumbnail);
+            Glide.with(getContext()).load(feedItem.getThumbnail()).into(imgThumbnail);
             TextView txtDescription = view.findViewById(R.id.txtDescription);
             txtDescription.setText(feedItem.getDescription());
 

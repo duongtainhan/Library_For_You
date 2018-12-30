@@ -64,28 +64,25 @@ public class NewsFragment extends Fragment {
 
             switch (page_name) {
                 case CONST.NAME_PAGE.VN_EXPRESS:
-                    ReadRss(url_rss);
+                    ReadRss_VnExpress(url_rss);
                     break;
                 case CONST.NAME_PAGE.DAN_TRI:
-                    ReadRss(url_rss);
+                    ReadRss_DanTri(url_rss);
                     break;
                 case CONST.NAME_PAGE.HAI_TU_GIO:
-                    ReadRss(url_rss);
+                    ReadRss_24H(url_rss);
                     break;
                 case CONST.NAME_PAGE.KENH_14:
-                    ReadRss(url_rss);
+                    ReadRss_Kenh14(url_rss);
                     break;
                 case CONST.NAME_PAGE.VIETNAM_NET:
-                    ReadRss(url_rss);
-                    break;
-                case CONST.NAME_PAGE.DOI_SONG:
-                    ReadRss(url_rss);
+                    ReadRss_VietNamNet(url_rss);
                     break;
                 case CONST.NAME_PAGE.NGOI_SAO:
-                    ReadRss(url_rss);
+                    ReadRss_NgoiSao(url_rss);
                     break;
                 case CONST.NAME_PAGE.GENK:
-                    ReadRss(url_rss);
+                    ReadRss_Genk(url_rss);
                     break;
             }
 
@@ -109,10 +106,40 @@ public class NewsFragment extends Fragment {
             }
             super.onPostExecute(feedItems);
         }
-        private void ReadRss(String urlRSS)
+        private void ReadRss_VnExpress(String urlRSS)
         {
             TypePage typePage = new TypePage(urlRSS);
-            feedItems = typePage.getAllItems();
+            feedItems=typePage.getPageVnExpress();
+        }
+        private void ReadRss_DanTri(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems=typePage.getPageDanTri();
+        }
+        private void ReadRss_24H(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems=typePage.getPage24H();
+        }
+        private void ReadRss_Kenh14(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems=typePage.getPageKenh14();
+        }
+        private void ReadRss_VietNamNet(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems=typePage.getPageVietNam();
+        }
+        private void ReadRss_NgoiSao(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems=typePage.getPageNgoiSao();
+        }
+        private void ReadRss_Genk(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems=typePage.getPageGenk();
         }
     }
 }
