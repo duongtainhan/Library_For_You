@@ -1,13 +1,17 @@
 package android.dienty.library_for_you.ReadingNews.ViewNews;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.dienty.library_for_you.CONST;
 import android.dienty.library_for_you.R;
+import android.dienty.library_for_you.ReadingNews.SelectPage.activity.SelectPageActivity;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,17 +20,29 @@ public class ViewNewsActivity extends AppCompatActivity {
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private RelativeLayout relativeBack;
     private PagerAdapter pagerAdapter;
     private List<Fragment> listFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_news);
+
+        InitView();
+        SetPage();
     }
     private void InitView()
     {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
+        relativeBack = findViewById(R.id.relativeBackPage);
+        relativeBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ViewNewsActivity.this, SelectPageActivity.class);
+                startActivity(intent);
+            }
+        });
     }
     private void SetPage() {
         pagerAdapter = new PagerAdapter(getSupportFragmentManager());
@@ -36,9 +52,6 @@ public class ViewNewsActivity extends AppCompatActivity {
             page_selected = getIntent().getStringExtra(CONST.INTENT.PAGE_SELECTED);
         }
         switch (page_selected) {
-            case CONST.NAME_PAGE.ZING_NEWS:
-                PageZingNews();
-                break;
             case CONST.NAME_PAGE.VN_EXPRESS:
                 PageVnExpress();
                 break;
@@ -63,14 +76,6 @@ public class ViewNewsActivity extends AppCompatActivity {
         }
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-    }
-    private void PageZingNews() {
-        listFragment.clear();
-        for (int i = 0; i < CONST.DATA.length.zing_news; i++) {
-            NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.zing_news[i], CONST.NAME_PAGE.ZING_NEWS);
-            pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.zing_news[i]);
-            listFragment.add(newsFragment);
-        }
     }
 
     private void PageVnExpress() {
@@ -107,7 +112,6 @@ public class ViewNewsActivity extends AppCompatActivity {
             pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.kenh_14[i]);
             listFragment.add(newsFragment);
         }
-        titlePage = Key.title.kenh_14;
     }
 
     private void PageVietNameNet() {
@@ -126,7 +130,6 @@ public class ViewNewsActivity extends AppCompatActivity {
             pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.doi_song[i]);
             listFragment.add(newsFragment);
         }
-        titlePage = CONST.DATA.title.doi_song;
     }
 
     private void PageNguoiDuaTin() {
@@ -145,12 +148,11 @@ public class ViewNewsActivity extends AppCompatActivity {
             pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.ngoi_sao[i]);
             listFragment.add(newsFragment);
         }
-        titlePage = Key.title.ngoi_sao;
     }
 
     private void PageGenk() {
         listFragment.clear();
-        for (int i = 0; i < Key.length.genk; i++) {
+        for (int i = 0; i < CONST.DATA.length.genk; i++) {
             NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.genk[i], CONST.NAME_PAGE.GENK);
             pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.genk[i]);
             listFragment.add(newsFragment);

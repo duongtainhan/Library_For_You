@@ -47,7 +47,6 @@ public class ListPagesFragment extends Fragment {
         if(typePage.equals(CONST.TYPE_PAGE.VIET_NAM))
         {
             List<PageItem> pageItems = new ArrayList<>();
-            pageItems.add(new PageItem(CONST.NAME_PAGE.ZING_NEWS,R.drawable.zing_news));
             pageItems.add(new PageItem(CONST.NAME_PAGE.VN_EXPRESS,R.drawable.vn_express));
             pageItems.add(new PageItem(CONST.NAME_PAGE.DAN_TRI,R.drawable.dan_tri));
             pageItems.add(new PageItem(CONST.NAME_PAGE.HAI_TU_GIO,R.drawable.hai_tu_gio));
@@ -64,7 +63,6 @@ public class ListPagesFragment extends Fragment {
         else
         {
             List<PageItem> pageItems = new ArrayList<>();
-            pageItems.add(new PageItem(CONST.NAME_PAGE.ZING_NEWS,R.drawable.zing_news));
             pageItems.add(new PageItem(CONST.NAME_PAGE.VN_EXPRESS,R.drawable.vn_express));
             pageItems.add(new PageItem(CONST.NAME_PAGE.DAN_TRI,R.drawable.dan_tri));
             pageItems.add(new PageItem(CONST.NAME_PAGE.HAI_TU_GIO,R.drawable.hai_tu_gio));

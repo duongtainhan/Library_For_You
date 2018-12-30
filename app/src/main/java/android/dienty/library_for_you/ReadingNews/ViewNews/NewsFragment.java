@@ -3,6 +3,8 @@ package android.dienty.library_for_you.ReadingNews.ViewNews;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.dienty.foryou.ReadNews.FeedItem;
+import android.dienty.foryou.ReadNews.TypePage;
+import android.dienty.library_for_you.CONST;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,15 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import android.dienty.library_for_you.R;
 
 @SuppressLint("ValidFragment")
 public class NewsFragment extends Fragment {
@@ -65,41 +63,29 @@ public class NewsFragment extends Fragment {
             String url_rss = params[0];
 
             switch (page_name) {
-                case "zing_news":
-                    //SetPageZing(url_rss);
+                case CONST.NAME_PAGE.VN_EXPRESS:
+                    ReadRss(url_rss);
                     break;
-                case "vn_express":
-                   // SetPageVnExpress(url_rss);
+                case CONST.NAME_PAGE.DAN_TRI:
+                    ReadRss(url_rss);
                     break;
-                case "dan_tri":
-                    //SetPageDanTri(url_rss);
+                case CONST.NAME_PAGE.HAI_TU_GIO:
+                    ReadRss(url_rss);
                     break;
-                case "24h":
-                    //SetPage24h(url_rss);
+                case CONST.NAME_PAGE.KENH_14:
+                    ReadRss(url_rss);
                     break;
-                case "kenh_14":
-                    //SetPageKenh14(url_rss);
+                case CONST.NAME_PAGE.VIETNAM_NET:
+                    ReadRss(url_rss);
                     break;
-                case "vietnam_net":
-                    //SetPageVietNam(url_rss);
+                case CONST.NAME_PAGE.DOI_SONG:
+                    ReadRss(url_rss);
                     break;
-                case "doi_song":
-                    //SetPageDoiSong(url_rss);
+                case CONST.NAME_PAGE.NGOI_SAO:
+                    ReadRss(url_rss);
                     break;
-                case "nguoi_dua_tin":
-                    //SetPageNguoiDuaTin(url_rss);
-                    break;
-                case "ngoi_sao":
-                    //SetPageNgoiSao(url_rss);
-                    break;
-                case "genk":
-                    //SetPageGenk(url_rss);
-                    break;
-                case "so_ha":
-                    //SetPageSoHa(url_rss);
-                    break;
-                case "vov":
-                    //SetPageVov(url_rss);
+                case CONST.NAME_PAGE.GENK:
+                    ReadRss(url_rss);
                     break;
             }
 
@@ -108,14 +94,19 @@ public class NewsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(ArrayList<FeedItem> feedItems) {
-            if (page_name.equals("dan_tri") || page_name.equals("so_ha") || page_name.equals("vov")) {
-                adapterOtherType = new AdapterOtherType(getActivity(), android.R.layout.simple_list_item_1, feedItems);
+            if (page_name.equals(CONST.NAME_PAGE.DAN_TRI)) {
+                adapterOtherType = new AdapterOtherType(Objects.requireNonNull(getActivity()), android.R.layout.simple_list_item_1, feedItems);
                 listView.setAdapter(adapterOtherType);
             } else {
-                newsAdapter = new NewsAdapter(getActivity(), android.R.layout.simple_list_item_1, feedItems);
+                newsAdapter = new NewsAdapter(Objects.requireNonNull(getActivity()), android.R.layout.simple_list_item_1, feedItems);
                 listView.setAdapter(newsAdapter);
             }
             super.onPostExecute(feedItems);
+        }
+        private void ReadRss(String urlRSS)
+        {
+            TypePage typePage = new TypePage(urlRSS);
+            feedItems = typePage.getAllItems();
         }
     }
 }

@@ -3,7 +3,6 @@ package android.dienty.library_for_you;
 public class CONST {
     //Name of pages
     public static final class NAME_PAGE{
-        public static final String ZING_NEWS = "ZING NEWS";
         public static final String VN_EXPRESS = "VN EXPRESS";
         public static final String DAN_TRI = "DÂN TRÍ";
         public static final String HAI_TU_GIO = "24H";
@@ -31,7 +30,6 @@ public class CONST {
     public static final class DATA
     {
         public static final class length{
-            public static final int zing_news = 17;
             public static final int vn_express = 18;
             public static final int dan_tri = 26;
             public static final int hai_tu_gio = 25;
@@ -46,25 +44,6 @@ public class CONST {
         }
         public static final class url
         {
-            public static final String zing_news[]={
-                    "https://news.zing.vn/rss/tin-moi.rss",
-                    "https://news.zing.vn/rss/thoi-su.rss",
-                    "https://news.zing.vn/rss/the-gioi.rss",
-                    "https://news.zing.vn/rss/kinh-doanh-tai-chinh.rss",
-                    "https://news.zing.vn/rss/phap-luat.rss",
-                    "https://news.zing.vn/rss/xuat-ban.rss",
-                    "https://news.zing.vn/rss/the-thao.rss",
-                    "https://news.zing.vn/rss/cong-nghe.rss",
-                    "https://news.zing.vn/rss/oto-xe-may.rss",
-                    "https://news.zing.vn/rss/giai-tri.rss",
-                    "https://news.zing.vn/rss/am-nhac.rss",
-                    "https://news.zing.vn/rss/phim-anh.rss",
-                    "https://news.zing.vn/rss/thoi-trang.rss",
-                    "https://news.zing.vn/rss/song-tre.rss",
-                    "https://news.zing.vn/rss/giao-duc.rss",
-                    "https://news.zing.vn/rss/du-lich.rss",
-                    "https://news.zing.vn/rss/suc-khoe.rss"
-            };
             public static final String vn_express[]={
                     "https://vnexpress.net/rss/tin-moi-nhat.rss",
                     "https://vnexpress.net/rss/thoi-su.rss",

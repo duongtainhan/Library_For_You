@@ -21,8 +21,7 @@ public class TypePage {
         return urlRss;
     }
 
-    public List<FeedItem> getAllItems()
-    {
+    public List<FeedItem> getAllItems() {
         try {
             Document doc = Jsoup.connect(getUrlRss()).get();
             Elements elements = doc.select("item");
@@ -31,9 +30,10 @@ public class TypePage {
                 String link = item.select("link").text();
                 String description = item.select("description").text();
                 String pubDate = item.select("pubDate").text();
+                Document document = Jsoup.parse(description);
                 String imageUrl = "";
                 try {
-                    imageUrl = item.select("enclosure").get(0).attr("url");
+                    imageUrl = document.select("img").get(0).attr("src");
                 } catch (Exception ex) {
                 }
 
