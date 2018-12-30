@@ -3,6 +3,7 @@ package android.dienty.library_for_you;
 public class CONST {
     //Name of pages
     public static final class NAME_PAGE{
+        //VIET NAM PAGES
         public static final String VN_EXPRESS = "VN EXPRESS";
         public static final String DAN_TRI = "DÂN TRÍ";
         public static final String HAI_TU_GIO = "24H";
@@ -14,6 +15,13 @@ public class CONST {
         public static final String GENK = "GENK";
         public static final String SOHA = "SOHA";
         public static final String VOV = "VOV";
+        //INTERTIONAL PAGES
+        public static final String DAILY_MAIL = "MAIL ONLINE";
+        public static final String NYTIMES = "THE NEW YORK TIMES";
+        public static final String HUFF_POST = "HUFFPOST";
+        public static final String WSJ = "WSJ";
+        public static final String WASHINGTON_POST = "THE WASHINGTON POST";
+        public static final String LA_TIMES = "LOS ANGELES TIMES";
     }
 
     //Intent
