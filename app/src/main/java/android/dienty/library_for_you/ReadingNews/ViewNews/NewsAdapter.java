@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.dienty.foryou.ReadNews.FeedItem;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,7 @@ public class NewsAdapter extends ArrayAdapter<FeedItem>{
             // Anh xa + Gan gia tri
             TextView txtTitle = view.findViewById(R.id.txtTitle);
             txtTitle.setText(feedItem.getTitle());
+            Log.d("TITLE",feedItem.getTitle());
             ImageView imgThumbnail = view.findViewById(R.id.imgThumbnail);
             Picasso.get().load(feedItem.getThumbnail()).into(imgThumbnail);
             TextView txtDescription = view.findViewById(R.id.txtDescription);

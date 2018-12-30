@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -39,8 +40,7 @@ public class ViewNewsActivity extends AppCompatActivity {
         relativeBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ViewNewsActivity.this, SelectPageActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
     }
@@ -50,10 +50,12 @@ public class ViewNewsActivity extends AppCompatActivity {
         String page_selected = "";
         if (getIntent() != null) {
             page_selected = getIntent().getStringExtra(CONST.INTENT.PAGE_SELECTED);
+            Log.d("GET_PAGE_VIEWNEWS",page_selected);
         }
         switch (page_selected) {
             case CONST.NAME_PAGE.VN_EXPRESS:
                 PageVnExpress();
+                Log.d("GET_PAGE_NEWS","VN_EXPRESS");
                 break;
             case CONST.NAME_PAGE.DAN_TRI:
                 PageDanTri();

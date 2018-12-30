@@ -9,6 +9,7 @@ import android.dienty.library_for_you.ReadingNews.ViewNews.ViewNewsActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,32 +46,30 @@ public class PageItemAdapter extends RecyclerView.Adapter<PageItemAdapter.ViewHo
                 switch (viewHolder.getAdapterPosition())
                 {
                     case 0:
-                        page_selected=CONST.NAME_PAGE.ZING_NEWS;
-                        break;
-                    case 1:
                         page_selected=CONST.NAME_PAGE.VN_EXPRESS;
                         break;
-                    case 2:
+                    case 1:
                         page_selected=CONST.NAME_PAGE.DAN_TRI;
                         break;
-                    case 3:
+                    case 2:
                         page_selected=CONST.NAME_PAGE.HAI_TU_GIO;
                         break;
-                    case 4:
+                    case 3:
                         page_selected=CONST.NAME_PAGE.KENH_14;
                         break;
-                    case 5:
+                    case 4:
                         page_selected=CONST.NAME_PAGE.VIETNAM_NET;
                         break;
-                    case 6:
+                    case 5:
                         page_selected=CONST.NAME_PAGE.NGOI_SAO;
                         break;
-                    case 7:
+                    case 6:
                         page_selected=CONST.NAME_PAGE.GENK;
                         break;
                 }
                 Intent intent = new Intent(context,ViewNewsActivity.class);
                 intent.putExtra(CONST.INTENT.PAGE_SELECTED,page_selected);
+                Log.d("GET_PAGE",page_selected);
                 context.startActivity(intent);
             }
         });

@@ -95,11 +95,17 @@ public class NewsFragment extends Fragment {
         @Override
         protected void onPostExecute(ArrayList<FeedItem> feedItems) {
             if (page_name.equals(CONST.NAME_PAGE.DAN_TRI)) {
-                adapterOtherType = new AdapterOtherType(Objects.requireNonNull(getActivity()), android.R.layout.simple_list_item_1, feedItems);
-                listView.setAdapter(adapterOtherType);
+                if(getActivity()!=null)
+                {
+                    adapterOtherType = new AdapterOtherType(getActivity(), android.R.layout.simple_list_item_1, feedItems);
+                    listView.setAdapter(adapterOtherType);
+                }
             } else {
-                newsAdapter = new NewsAdapter(Objects.requireNonNull(getActivity()), android.R.layout.simple_list_item_1, feedItems);
-                listView.setAdapter(newsAdapter);
+                if(getActivity()!=null)
+                {
+                    newsAdapter = new NewsAdapter(getActivity(), android.R.layout.simple_list_item_1, feedItems);
+                    listView.setAdapter(newsAdapter);
+                }
             }
             super.onPostExecute(feedItems);
         }
