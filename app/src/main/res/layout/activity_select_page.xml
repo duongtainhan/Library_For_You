@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_select_page"
     tools:context=".ReadingNews.SelectPage.activity.SelectPageActivity">
 
     <RelativeLayout
@@ -43,12 +42,11 @@
         android:layout_height="@dimen/_50sdp"
         android:background="#0d80d0"
         app:tabGravity="fill"
-        app:tabIndicatorColor="@color/material_title"
-        app:tabIndicatorHeight="@dimen/_3sdp"
-        app:tabIndicator="@color/material_selected_tab"
+        app:tabIndicatorColor="@color/orange"
+        app:tabIndicatorHeight="@dimen/_5sdp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/white"
-        app:tabTextColor="@color/material_dim_text">
+        app:tabTextColor="@color/dim_text">
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_50sdp"

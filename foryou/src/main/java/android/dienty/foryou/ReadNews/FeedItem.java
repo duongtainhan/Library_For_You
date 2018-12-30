@@ -16,7 +16,7 @@ public class FeedItem {
         this.link = link;
     }
 
-    private String getTitle() {
+    public String getTitle() {
         return title;
     }
 

@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     CardView cardReading;
     CardView cardImageProcess;
     LinearLayout linearFunction;
+    public static boolean showAnimation = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void InitAction() {
-        CreateAnimation();
+        if(showAnimation)
+        {
+            CreateAnimation();
+            showAnimation=false;
+        }
         ClickAnimationCardView();
     }
 

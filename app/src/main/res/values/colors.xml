@@ -7,15 +7,6 @@
     <color name="dim">#67deeb</color>
     <color name="dim1">#1bdbee</color>
     <color name="dim2">#a9f2fd</color>
-    <color name="bg_select_page">#e3e8ee</color>
-    <color name="material_background_blue">#e9f0fd</color>
-    <color name="material_background_blue_2">#cbddfd</color>
-    <color name="material_selected_tab">#e0e9fa</color>
-    <color name="material_dim_text">#606368</color>
-    <color name="material_white">#f8fafe</color>
-    <color name="material_title">#5285ec</color>
-    <color name="material_background_alarm">#6390ec</color>
-    <color name="material_background_orange">#f6c544</color>
-    <color name="material_text">#101010</color>
+    <color name="dim_text">#606368</color>
     <color name="orange">#fda128</color>
 </resources>

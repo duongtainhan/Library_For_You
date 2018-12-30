@@ -9,26 +9,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TypeItem {
+public class TypePage {
     private String urlRss;
-    private String nameType;
     private List<FeedItem> feedItemList = new ArrayList<>();
 
-    public void setUrlType(String urlRss) {
+    public TypePage(String urlRss) {
         this.urlRss = urlRss;
-    }
-
-    public void setNameType(String nameType) {
-        this.nameType = nameType;
     }
 
     public String getUrlRss() {
         return urlRss;
     }
 
-    public String getNameType() {
-        return nameType;
-    }
     public List<FeedItem> getAllItems()
     {
         try {
