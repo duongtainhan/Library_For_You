@@ -19,6 +19,7 @@ public class CONST {
     //Intent
     public static final class INTENT{
         public static final String PAGE_SELECTED = "PAGE_SELECTED";
+        public static final String KEY_SEARCH = "KEY_SEARCH";
     }
     //TypePage
     public static final class TYPE_PAGE

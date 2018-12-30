@@ -37,7 +37,7 @@
     </RelativeLayout>
     <ListView
         android:id="@+id/listVideo"
-        android:layout_below="@id/relativeBack"
+        android:layout_below="@id/relativeBackNews"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
