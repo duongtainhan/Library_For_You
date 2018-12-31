@@ -1,10 +1,13 @@
 package android.dienty.library_for_you.ImageProcessing;
 
+import android.content.Intent;
+import android.dienty.library_for_you.CONST;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.dienty.library_for_you.R;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -15,7 +18,7 @@ import bo.photo.module.image_picker_module.furntion.ImageLoaderListener;
 import bo.photo.module.image_picker_module.model.Folder;
 import bo.photo.module.image_picker_module.model.Image;
 
-public class ShowGalleryActivity extends AppCompatActivity {
+public class ShowGalleryActivity extends AppCompatActivity implements GetPathListener {
 
     RecyclerView recyclerView;
     ArrayList<String> listResource;
@@ -43,8 +46,8 @@ public class ShowGalleryActivity extends AppCompatActivity {
         imageFileLoader = new ImageFileLoader(ShowGalleryActivity.this);
     }
     private void InitAction() {
-        AddPhotoAdapter adapter = new AddPhotoAdapter(listResource,getApplicationContext());
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(),3);
+        AddPhotoAdapter adapter = new AddPhotoAdapter(listResource,ShowGalleryActivity.this);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(ShowGalleryActivity.this,3);
         recyclerView.setLayoutManager(gridLayoutManager);
         recyclerView.setAdapter(adapter);
         imageFileLoader.loadDeviceImages(true, false, excludedImages, new ImageLoaderListener() {
@@ -65,4 +68,10 @@ public class ShowGalleryActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onGetPath(String path) {
+        Intent intent = new Intent(ShowGalleryActivity.this, ImageProcessActivity.class);
+        intent.putExtra(CONST.INTENT.PATH_IMAGE, path);
+        startActivity(intent);
+    }
 }

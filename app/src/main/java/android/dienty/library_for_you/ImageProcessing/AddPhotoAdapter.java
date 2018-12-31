@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.dienty.library_for_you.CONST;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,10 +20,12 @@ import android.dienty.library_for_you.R;
 public class AddPhotoAdapter extends RecyclerView.Adapter<AddPhotoAdapter.ViewHolder> {
     List<String> listFrameAsset;
     Context context;
+    GetPathListener getPathListener;
 
     public AddPhotoAdapter(ArrayList<String> listFrameAsset, Context context) {
         this.context = context;
         this.listFrameAsset =listFrameAsset;
+        getPathListener = (GetPathListener) context;
     }
     @NonNull
     @Override
@@ -37,9 +40,7 @@ public class AddPhotoAdapter extends RecyclerView.Adapter<AddPhotoAdapter.ViewHo
           holder.imageView.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
-                  Intent intent = new Intent(context, ImageProcessActivity.class);
-                  intent.putExtra(CONST.INTENT.PATH_IMAGE,listFrameAsset.get(position));
-                  context.startActivity(intent);
+                  getPathListener.onGetPath(listFrameAsset.get(position));
               }
           });
        }
