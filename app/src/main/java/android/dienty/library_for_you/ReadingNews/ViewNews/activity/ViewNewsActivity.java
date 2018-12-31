@@ -1,19 +1,16 @@
-package android.dienty.library_for_you.ReadingNews.ViewNews;
+package android.dienty.library_for_you.ReadingNews.ViewNews.activity;
 
 import android.dienty.library_for_you.CONST;
 import android.dienty.library_for_you.R;
-import android.os.AsyncTask;
+import android.dienty.library_for_you.ReadingNews.ViewNews.fragment.NewsFragment;
+import android.dienty.library_for_you.ReadingNews.ViewNews.adapter.PagerAdapter;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ViewNewsActivity extends AppCompatActivity {
 

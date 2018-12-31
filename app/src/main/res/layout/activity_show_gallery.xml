@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImageProcessing.ShowGalleryActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeBack"
+        android:background="@color/orange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/rl_back"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp">
+            <ImageView
+                android:src="@drawable/ic_back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp" />
+        </RelativeLayout>
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_toRightOf="@id/rl_back"
+            android:textStyle="bold"
+            android:id="@+id/tv_artwork"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_20ssp"
+            android:text="Main Screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/relativeBack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:id="@+id/rv_gallery_library"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

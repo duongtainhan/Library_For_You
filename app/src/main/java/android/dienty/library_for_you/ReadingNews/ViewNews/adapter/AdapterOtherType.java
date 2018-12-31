@@ -1,4 +1,4 @@
-package android.dienty.library_for_you.ReadingNews.ViewNews;
+package android.dienty.library_for_you.ReadingNews.ViewNews.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.dienty.library_for_you.CONST;
 import android.dienty.library_for_you.ReadingNews.SearchYoutube.SearchYoutubeActivity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,37 +19,30 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
-
 import android.dienty.library_for_you.R;
 
-public class NewsAdapter extends ArrayAdapter<FeedItem> {
+public class AdapterOtherType extends ArrayAdapter<FeedItem> {
 
-    private ImageView imgOption;
-
-    public NewsAdapter(@NonNull Context context, int resource, @NonNull List<FeedItem> objects) {
+    public AdapterOtherType(@NonNull Context context, int resource, @NonNull List<FeedItem> objects) {
         super(context, resource, objects);
     }
 
     @NonNull
     @Override
-    public View getView(final int position, @Nullable final View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View view = convertView;
         if (view == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            view = inflater.inflate(R.layout.layout_news, null);
+            view =  inflater.inflate(R.layout.layout_other_type, null);
         }
         FeedItem feedItem = getItem(position);
         if (feedItem != null) {
             // Anh xa + Gan gia tri
-            TextView txtTitle = view.findViewById(R.id.txtTitle);
+            TextView txtTitle = view.findViewById(R.id.txtTypeTitle);
             txtTitle.setText(feedItem.getTitle());
-            Log.d("TITLE", feedItem.getTitle());
-            ImageView imgThumbnail = view.findViewById(R.id.imgThumbnail);
+            ImageView imgThumbnail = view.findViewById(R.id.imgTypeThumbnail);
             Glide.with(getContext()).load(feedItem.getThumbnail()).into(imgThumbnail);
-            TextView txtDescription = view.findViewById(R.id.txtDescription);
-            txtDescription.setText(feedItem.getDescription());
-
-            imgOption = view.findViewById(R.id.imgOption);
+            ImageView imgOption = view.findViewById(R.id.imgTypeOption);
             imgOption.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -73,5 +65,4 @@ public class NewsAdapter extends ArrayAdapter<FeedItem> {
         }
         return view;
     }
-
 }

@@ -1,25 +1,24 @@
-package android.dienty.library_for_you.ReadingNews.ViewNews;
+package android.dienty.library_for_you.ReadingNews.ViewNews.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.dienty.foryou.ReadNews.FeedItem;
 import android.dienty.foryou.ReadNews.TypePage;
 import android.dienty.library_for_you.CONST;
+import android.dienty.library_for_you.ReadingNews.ViewNews.adapter.AdapterOtherType;
+import android.dienty.library_for_you.ReadingNews.ViewNews.adapter.NewsAdapter;
 import android.dienty.library_for_you.ReadingNews.WebView.WebViewActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 import android.dienty.library_for_you.R;
 

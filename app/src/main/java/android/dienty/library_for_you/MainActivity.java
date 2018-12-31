@@ -2,8 +2,6 @@ package android.dienty.library_for_you;
 
 import android.content.Intent;
 import android.dienty.library_for_you.ReadingNews.SelectPage.activity.SelectPageActivity;
-import android.dienty.library_for_you.ReadingNews.ViewNews.NewsFragment;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -13,9 +11,6 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

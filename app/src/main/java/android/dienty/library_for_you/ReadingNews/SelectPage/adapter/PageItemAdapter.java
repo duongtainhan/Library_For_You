@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.dienty.library_for_you.CONST;
 import android.dienty.library_for_you.R;
 import android.dienty.library_for_you.ReadingNews.SelectPage.models.PageItem;
-import android.dienty.library_for_you.ReadingNews.ViewNews.ViewNewsActivity;
+import android.dienty.library_for_you.ReadingNews.ViewNews.activity.ViewNewsActivity;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;

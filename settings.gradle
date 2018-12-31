@@ -1,1 +1,1 @@
-include ':app', ':foryou'
+include ':app', ':foryou', ':photo_frame_module'

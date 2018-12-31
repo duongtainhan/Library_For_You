@@ -1,4 +1,4 @@
-package android.dienty.library_for_you.ReadingNews.ViewNews;
+package android.dienty.library_for_you.ReadingNews.ViewNews.adapter;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
