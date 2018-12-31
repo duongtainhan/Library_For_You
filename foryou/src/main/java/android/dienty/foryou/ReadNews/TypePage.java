@@ -10,9 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TypePage {
-    private List<FeedItem> feedItemList = new ArrayList<>();
+    private ArrayList<FeedItem> feedItemList = new ArrayList<>();
 
-    public List<FeedItem> getFeedItemList() {
+    public ArrayList<FeedItem> getFeedItemList() {
         return feedItemList;
     }
 

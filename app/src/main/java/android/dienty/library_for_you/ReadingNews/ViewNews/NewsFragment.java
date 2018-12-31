@@ -26,7 +26,6 @@ import android.dienty.library_for_you.R;
 public class NewsFragment extends Fragment {
 
     TypePage typePage = new TypePage();
-    private List<FeedItem> feedItems = new ArrayList<>();
     View view;
     NewsAdapter newsAdapter;
     AdapterOtherType adapterOtherType;
@@ -87,7 +86,7 @@ public class NewsFragment extends Fragment {
                     break;
             }
 
-            return (ArrayList<FeedItem>) feedItems;
+            return typePage.getFeedItemList();
         }
 
         @Override
@@ -109,31 +108,31 @@ public class NewsFragment extends Fragment {
         }
         private void ReadRss_VnExpress(String urlRSS)
         {
-            feedItems=typePage.getPageVnExpress(urlRSS);
+            typePage.getPageVnExpress(urlRSS);
         }
         private void ReadRss_DanTri(String urlRSS)
         {
-            feedItems=typePage.getPageDanTri(urlRSS);
+            typePage.getPageDanTri(urlRSS);
         }
         private void ReadRss_24H(String urlRSS)
         {
-            feedItems=typePage.getPage24H(urlRSS);
+            typePage.getPage24H(urlRSS);
         }
         private void ReadRss_Kenh14(String urlRSS)
         {
-            feedItems=typePage.getPageKenh14(urlRSS);
+            typePage.getPageKenh14(urlRSS);
         }
         private void ReadRss_VietNamNet(String urlRSS)
         {
-            feedItems=typePage.getPageVietNam(urlRSS);
+            typePage.getPageVietNam(urlRSS);
         }
         private void ReadRss_NgoiSao(String urlRSS)
         {
-            feedItems=typePage.getPageNgoiSao(urlRSS);
+            typePage.getPageNgoiSao(urlRSS);
         }
         private void ReadRss_Genk(String urlRSS)
         {
-            feedItems=typePage.getPageGenk(urlRSS);
+            typePage.getPageGenk(urlRSS);
         }
     }
 }
