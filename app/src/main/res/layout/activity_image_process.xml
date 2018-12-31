@@ -1,9 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ImageProcessing.ImageProcessActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/relativeBack"
+        android:background="@color/orange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/rl_back"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp">
+            <ImageView
+                android:src="@drawable/ic_back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp" />
+        </RelativeLayout>
+
+        <TextView
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_toRightOf="@id/rl_back"
+            android:textStyle="bold"
+            android:id="@+id/tv_artwork"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_20ssp"
+            android:text="Main Screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/relativeTop"
+        android:layout_below="@id/relativeBack">
+        <android.support.v7.widget.CardView
+            android:layout_centerInParent="true"
+            android:id="@+id/cv_main"
+            android:layout_gravity="center"
+            app:cardElevation="@dimen/_10sdp"
+            android:layout_width="@dimen/_290sdp"
+            android:layout_height="@dimen/_290sdp">
+        <android.dienty.library_for_you.ImageProcessing.CustomImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:id="@+id/imagePhotoLibrary"/>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:shape="ring"
+            app:cardBackgroundColor="@color/pink"
+            app:cardCornerRadius="@dimen/_20sdp"
+            app:cardElevation="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_15sdp">
+            <ImageView
+                android:id="@+id/iv_save"
+                android:src="@drawable/ic_save"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp" />
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeTop">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:background="#dddbd9"
+            android:id="@+id/imageNone"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_55sdp"
+            android:src="@drawable/ic_none" />
+    </RelativeLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_toRightOf="@id/relativeTop"
+        android:layout_alignParentBottom="true"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        android:orientation="horizontal"
+        android:id="@+id/rv_background"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_60sdp">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

@@ -1,7 +1,17 @@
 package android.dienty.library_for_you;
 
+import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.dienty.library_for_you.ImageProcessing.ShowGalleryActivity;
 import android.dienty.library_for_you.ReadingNews.SelectPage.activity.SelectPageActivity;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
@@ -54,6 +64,19 @@ public class MainActivity extends AppCompatActivity {
             showAnimation=false;
         }
         ClickAnimationCardView();
+    }
+    public void getPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
+            } else {
+            }
+        }
+    }
+    private boolean checkWriteExternalPermission() {
+        String permission = Manifest.permission.WRITE_EXTERNAL_STORAGE;
+        int res = this.checkCallingOrSelfPermission(permission);
+        return (res == PackageManager.PERMISSION_GRANTED);
     }
 
     private void CreateAnimation()
@@ -126,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
                                                     @Override
                                                     public void onAnimationEnd(Animation animation) {
-
+                                                        getPermission();
                                                     }
 
                                                     @Override
@@ -218,7 +241,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationEnd(Animation animation) {
-
+                if (checkWriteExternalPermission()) {
+                    startActivity(new Intent(MainActivity.this, ShowGalleryActivity.class));
+                } else {
+                    getPermission();
+                }
             }
 
             @Override
@@ -232,5 +259,78 @@ public class MainActivity extends AppCompatActivity {
                 cardImageProcess.startAnimation(alphaImageProcess);
             }
         });
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (permissions.length == 0) {
+            return;
+        }
+        boolean allPermissionsGranted = true;
+        if (grantResults.length > 0) {
+            for (int grantResult : grantResults) {
+                if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                    allPermissionsGranted = false;
+                    break;
+                }
+            }
+        }
+        if (!allPermissionsGranted) {
+            boolean somePermissionsForeverDenied = false;
+            for (String permission : permissions) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
+                    final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                    alertDialogBuilder.setTitle("Permissions Required")
+                            .setMessage("You have forcefully denied some of the required permissions " +
+                                    "for this action. Please open settings, go to permissions and allow them.")
+                            .setPositiveButton("Retry", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    getPermission();
+                                }
+                            })
+                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .setCancelable(false)
+                            .create()
+                            .show();
+                } else {
+                    if (ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED) {
+                    } else {
+                        somePermissionsForeverDenied = true;
+                    }
+                }
+            }
+            if (somePermissionsForeverDenied) {
+                final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+                alertDialogBuilder.setTitle("Permissions Required")
+                        .setMessage("You have forcefully denied some of the required permissions " +
+                                "for this action. Please open settings, go to permissions and allow them.")
+                        .setPositiveButton("Settings", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                                        Uri.fromParts("package", getPackageName(), null));
+                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                                startActivity(intent);
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        })
+                        .setCancelable(false)
+                        .create()
+                        .show();
+            }
+        } else {
+            switch (requestCode) {
+                //act according to the request code used while requesting the permission(s).
+            }
+        }
     }
 }
