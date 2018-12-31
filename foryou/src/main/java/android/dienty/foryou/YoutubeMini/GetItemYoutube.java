@@ -31,6 +31,11 @@ public class GetItemYoutube {
     private ArrayList<Item> arrayItems;
     private VideoAdapter videoAdapter;
     private Context context;
+
+    public ArrayList<Item> getArrayItems() {
+        return arrayItems;
+    }
+
     private ListView listVideo;
 
     public void LoadJSON(String key, String key_search, int maxResult, Context context, ListView listVideo)

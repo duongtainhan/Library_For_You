@@ -43,7 +43,6 @@ public class NewsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_news, container, false);
         listView = view.findViewById(R.id.listView);
-        feedItems = new ArrayList<>();
         new LoadRss().execute(url);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
