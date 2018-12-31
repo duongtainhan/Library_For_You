@@ -1,10 +1,7 @@
 package android.dienty.library_for_you.ReadingNews.ViewNews;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.dienty.library_for_you.CONST;
 import android.dienty.library_for_you.R;
-import android.dienty.library_for_you.ReadingNews.SelectPage.activity.SelectPageActivity;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -24,6 +21,7 @@ public class ViewNewsActivity extends AppCompatActivity {
     private RelativeLayout relativeBack;
     private PagerAdapter pagerAdapter;
     private List<Fragment> listFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -125,24 +123,6 @@ public class ViewNewsActivity extends AppCompatActivity {
         }
     }
 
-    private void PageDoiSong() {
-        listFragment.clear();
-        for (int i = 0; i < CONST.DATA.length.doi_song; i++) {
-            NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.doi_song[i], CONST.NAME_PAGE.DOI_SONG);
-            pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.doi_song[i]);
-            listFragment.add(newsFragment);
-        }
-    }
-
-    private void PageNguoiDuaTin() {
-        listFragment.clear();
-        for (int i = 0; i < CONST.DATA.length.nguoi_dua_tin; i++) {
-            NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.nguoi_dua_tin[i], CONST.NAME_PAGE.NGUOI_DUA_TIN);
-            pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.nguoi_dua_tin[i]);
-            listFragment.add(newsFragment);
-        }
-    }
-
     private void PageNgoiSao() {
         listFragment.clear();
         for (int i = 0; i < CONST.DATA.length.ngoi_sao; i++) {
@@ -157,24 +137,6 @@ public class ViewNewsActivity extends AppCompatActivity {
         for (int i = 0; i < CONST.DATA.length.genk; i++) {
             NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.genk[i], CONST.NAME_PAGE.GENK);
             pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.genk[i]);
-            listFragment.add(newsFragment);
-        }
-    }
-
-    private void PageSoHa() {
-        listFragment.clear();
-        for (int i = 0; i < CONST.DATA.length.so_ha; i++) {
-            NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.so_ha[i], CONST.NAME_PAGE.SOHA);
-            pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.so_ha[i]);
-            listFragment.add(newsFragment);
-        }
-    }
-
-    private void PageVov() {
-        listFragment.clear();
-        for (int i = 0; i < CONST.DATA.length.vov; i++) {
-            NewsFragment newsFragment = new NewsFragment(CONST.DATA.url.vov[i], CONST.NAME_PAGE.VOV);
-            pagerAdapter.AddFragment(newsFragment, CONST.DATA.title.vov[i]);
             listFragment.add(newsFragment);
         }
     }

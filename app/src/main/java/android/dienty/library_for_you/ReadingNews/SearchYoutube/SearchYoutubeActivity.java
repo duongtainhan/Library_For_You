@@ -23,7 +23,7 @@ public class SearchYoutubeActivity extends AppCompatActivity {
         String key_search = getIntent().getStringExtra(CONST.INTENT.KEY_SEARCH);
         InitView();
         GetItemYoutube getItemYoutube = new GetItemYoutube();
-        getItemYoutube.LoadJSON(key,key_search,20,SearchYoutubeActivity.this,listVideo);
+        getItemYoutube.LoadJSON(key,key_search,10,SearchYoutubeActivity.this,listVideo);
     }
     private void InitView()
     {

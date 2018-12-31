@@ -9,19 +9,15 @@ public class CONST {
         public static final String HAI_TU_GIO = "24H";
         public static final String KENH_14 = "KÊNH 14";
         public static final String VIETNAM_NET = "VIETNAM.NET";
-        public static final String DOI_SONG = "ĐỜI SỐNG & PHÁP LUẬT";
-        public static final String NGUOI_DUA_TIN = "NGƯỜI ĐƯA TIN";
         public static final String NGOI_SAO = "NGÔI SAO";
         public static final String GENK = "GENK";
-        public static final String SOHA = "SOHA";
-        public static final String VOV = "VOV";
         //INTERTIONAL PAGES
-        public static final String DAILY_MAIL = "MAIL ONLINE";
         public static final String NYTIMES = "THE NEW YORK TIMES";
-        public static final String HUFF_POST = "HUFFPOST";
-        public static final String WSJ = "WSJ";
         public static final String WASHINGTON_POST = "THE WASHINGTON POST";
         public static final String LA_TIMES = "LOS ANGELES TIMES";
+        public static final String DAILY_MAIL = "MAIL ONLINE";
+        public static final String HUFF_POST = "HUFFPOST";
+        public static final String WSJ = "WSJ";
     }
 
     //Intent
@@ -44,12 +40,8 @@ public class CONST {
             public static final int hai_tu_gio = 25;
             public static final int kenh_14 = 11;
             public static final int vietnam_net = 17;
-            public static final int doi_song = 20;
-            public static final int nguoi_dua_tin = 15;
             public static final int ngoi_sao = 24;
             public static final int genk = 7;
-            public static final int so_ha = 12;
-            public static final int vov = 16;
         }
         public static final class url
         {
@@ -160,45 +152,6 @@ public class CONST {
                     "http://vietnamnet.vn/rss/tuanvietnam.rss",
                     "http://vietnamnet.vn/rss/goc-nhin-thang.rss"
             };
-            public static final String doi_song[]={
-                    "http://www.doisongphapluat.com/trang-chu.rss",
-                    "http://www.doisongphapluat.com/tin-the-gioi.rss",
-                    "http://www.doisongphapluat.com/tin-trong-nuoc.rss",
-                    "http://www.doisongphapluat.com/tam-diem-du-luan.rss",
-                    "http://www.doisongphapluat.com/nhip-cau-tieu-dung.rss",
-                    "http://www.doisongphapluat.com/xa-hoi.rss",
-                    "http://www.doisongphapluat.com/toan-canh.rss",
-                    "http://www.doisongphapluat.com/phap-luat.rss",
-                    "http://www.doisongphapluat.com/su-kien-luat-su.rss",
-                    "http://www.doisongphapluat.com/kinh-doanh.rss",
-                    "http://www.doisongphapluat.com/to-quoc-xanh.rss",
-                    "http://www.doisongphapluat.com/the-thao.rss",
-                    "http://www.doisongphapluat.com/cong-nghe.rss",
-                    "http://www.doisongphapluat.com/giao-duc.rss",
-                    "http://www.doisongphapluat.com/oto-xemay.rss",
-                    "http://www.doisongphapluat.com/tu-thien.rss",
-                    "http://www.doisongphapluat.com/dia-phuong.rss",
-                    "http://www.doisongphapluat.com/doi-song.rss",
-                    "http://www.doisongphapluat.com/san-pham.rss",
-                    "http://www.doisongphapluat.com/can-biet.rss"
-            };
-            public static final String nguoi_dua_tin[]={
-                    "https://www.nguoiduatin.vn/trang-chu.rss",
-                    "https://www.nguoiduatin.vn/phap-luat.rss",
-                    "https://www.nguoiduatin.vn/nhip-song.rss",
-                    "https://www.nguoiduatin.vn/kinh-doanh.rss",
-                    "https://www.nguoiduatin.vn/the-gioi.rss",
-                    "https://www.nguoiduatin.vn/nguoi-tre.rss",
-                    "https://www.nguoiduatin.vn/dia-phuong.rss",
-                    "https://www.nguoiduatin.vn/can-biet.rss",
-                    "https://www.nguoiduatin.vn/chinh-tri-xa-hoi.rss",
-                    "https://www.nguoiduatin.vn/giai-tri.rss",
-                    "https://www.nguoiduatin.vn/doi-song.rss",
-                    "https://www.nguoiduatin.vn/nghe-xem.rss",
-                    "https://www.nguoiduatin.vn/da-chieu.rss",
-                    "https://www.nguoiduatin.vn/cong-nghe.rss",
-                    "https://www.nguoiduatin.vn/tin-cu.rss"
-            };
             public static final String ngoi_sao[]={
                     "https://ngoisao.net/rss/hau-truong.rss",
                     "https://ngoisao.net/rss/ben-le.rss",
@@ -234,38 +187,6 @@ public class CONST {
                     "http://gamek.vn/mobile-social.rss",
                     "http://gamek.vn/gaming-gear.rss",
                     "http://gamek.vn/manga-film.rss"
-            };
-            public static final String so_ha[]={
-                    "http://soha.vn/giai-tri.rss",
-                    "http://soha.vn/the-thao.rss",
-                    "http://soha.vn/thoi-su.rss",
-                    "http://soha.vn/phap-luat.rss",
-                    "http://soha.vn/kinh-doanh.rss",
-                    "http://soha.vn/quoc-te.rss",
-                    "http://soha.vn/song-khoe.rss",
-                    "http://soha.vn/quan-su.rss",
-                    "http://soha.vn/cu-dan-mang.rss",
-                    "http://soha.vn/infographic.rss",
-                    "http://soha.vn/kham-pha.rss",
-                    "http://soha.vn/doi-song.rss"
-            };
-            public static final String vov[]={
-                    "https://vov.vn/rss/chinh-tri-209.rss",
-                    "https://vov.vn/rss/doi-song-218.rss",
-                    "https://vov.vn/rss/vov-binh-luan-352.rss",
-                    "https://vov.vn/rss/xa-hoi-314.rss",
-                    "https://vov.vn/rss/kinh-te-212.rss",
-                    "https://vov.vn/rss/the-gioi-213.rss",
-                    "https://vov.vn/rss/phap-luat-237.rss",
-                    "https://vov.vn/rss/quan-su-quoc-phong-445.rss",
-                    "https://vov.vn/rss/cong-nghe-449.rss",
-                    "https://vov.vn/rss/the-thao-214.rss",
-                    "https://vov.vn/rss/van-hoa-giai-tri-215.rss",
-                    "https://vov.vn/rss/nguoi-viet-287.rss",
-                    "https://vov.vn/rss/suc-khoe-311.rss",
-                    "https://vov.vn/rss/media-357.rss",
-                    "https://vov.vn/rss/oto-xe-may-423.rss",
-                    "https://vov.vn/rss/e-magazine-470.rss"
             };
         }
         public static final class title
@@ -396,45 +317,6 @@ public class CONST {
                     "Tuần việt nam",
                     "Góc nhìn thẳng"
             };
-            public static final String doi_song[]={
-                    "Trang chủ",
-                    "Thế giới",
-                    "Trong nước",
-                    "Tâm điểm",
-                    "Tiêu dùng",
-                    "Xã hội",
-                    "Toàn cảnh",
-                    "Pháp luật",
-                    "Sự kiện",
-                    "Kinh doanh",
-                    "Tổ quốc xanh",
-                    "Thể thao",
-                    "Công nghệ",
-                    "Giáo dục",
-                    "Xe",
-                    "Nhân ái",
-                    "Địa phương",
-                    "Đời sống",
-                    "Sản phẩm",
-                    "Cần biết"
-            };
-            public static final String nguoi_dua_tin[]={
-                    "Trang chủ",
-                    "Pháp luật",
-                    "Nhịp sống",
-                    "Kinh doanh",
-                    "Thế giới",
-                    "Người trẻ",
-                    "Địa phương",
-                    "Cần biết",
-                    "Xã hội",
-                    "Giải trí",
-                    "Đời sống",
-                    "Nghe/Xem",
-                    "Đa chiều",
-                    "Công nghệ",
-                    "Tin cũ"
-            };
             public static final String ngoi_sao[]={
                     "Hậu trường",
                     "Bên lề",
@@ -470,38 +352,6 @@ public class CONST {
                     "Mobile",
                     "Gaming Gear",
                     "Manga Film"
-            };
-            public static final String so_ha[]={
-                    "Giải trí",
-                    "Thể thao",
-                    "Thời sự",
-                    "Pháp luật",
-                    "Kinh doanh",
-                    "Quốc tế",
-                    "Sống khỏe",
-                    "Quân sự",
-                    "Cư dân mạng",
-                    "Info Graphic",
-                    "Khám phá",
-                    "Đời sống"
-            };
-            public static final String vov[]={
-                    "Chính trị",
-                    "Đời sống",
-                    "Bình luận",
-                    "Xã hội",
-                    "Kinh tế",
-                    "Thế giới",
-                    "Pháp luật",
-                    "Quân sự",
-                    "Công nghệ",
-                    "Thể thao",
-                    "Giải trí",
-                    "Người Việt",
-                    "Sức khỏe",
-                    "Media",
-                    "Xe",
-                    "E-Magazine"
             };
         }
     }

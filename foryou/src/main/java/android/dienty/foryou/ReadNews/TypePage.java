@@ -10,21 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TypePage {
-    private String urlRss;
     private List<FeedItem> feedItemList = new ArrayList<>();
 
-    public TypePage(String urlRss) {
-        this.urlRss = urlRss;
-    }
-
-    public String getUrlRss() {
-        return urlRss;
-    }
-
-    public List<FeedItem> getPageVnExpress() {
+    public List<FeedItem> getPageVnExpress(String urlRss) {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
@@ -48,10 +39,10 @@ public class TypePage {
         }
         return feedItemList;
     }
-    public List<FeedItem> getPageDanTri() {
+    public List<FeedItem> getPageDanTri(String urlRss) {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
@@ -75,10 +66,10 @@ public class TypePage {
         }
         return feedItemList;
     }
-    public List<FeedItem> getPage24H() {
+    public List<FeedItem> getPage24H(String urlRss) {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
@@ -112,10 +103,10 @@ public class TypePage {
         }
         return feedItemList;
     }
-    public List<FeedItem> getPageKenh14() {
+    public List<FeedItem> getPageKenh14(String urlRss) {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
@@ -139,11 +130,11 @@ public class TypePage {
         }
         return feedItemList;
     }
-    public List<FeedItem> getPageVietNam()
+    public List<FeedItem> getPageVietNam(String urlRss)
     {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
@@ -167,11 +158,11 @@ public class TypePage {
         }
         return feedItemList;
     }
-    public List<FeedItem> getPageNgoiSao()
+    public List<FeedItem> getPageNgoiSao(String urlRss)
     {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
@@ -198,11 +189,11 @@ public class TypePage {
         }
         return feedItemList;
     }
-    public List<FeedItem> getPageGenk()
+    public List<FeedItem> getPageGenk(String urlRss)
     {
         feedItemList.clear();
         try {
-            Document doc = Jsoup.connect(getUrlRss()).get();
+            Document doc = Jsoup.connect(urlRss).get();
             Elements elements = doc.select("item");
             for (Element item : elements) {
                 String title = item.select("title").text();
