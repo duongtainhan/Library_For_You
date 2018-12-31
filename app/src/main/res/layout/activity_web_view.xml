@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReadingNews.WebView.WebViewActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeBack"
+        android:background="@color/orange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp">
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/rl_back_youtube"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp">
+            <ImageView
+                android:src="@drawable/ic_back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <WebView
+        android:layout_below="@id/relativeBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
+</RelativeLayout>

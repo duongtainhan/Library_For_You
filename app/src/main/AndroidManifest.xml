@@ -3,6 +3,7 @@
     package="android.dienty.library_for_you">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,16 +12,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReadingNews.SelectPage.activity.SelectPageActivity" />
-        <activity android:name=".ReadingNews.ViewNews.ViewNewsActivity" />
-        <activity android:name=".ReadingNews.SearchYoutube.SearchYoutubeActivity"></activity>
+        <activity
+            android:name=".ReadingNews.SelectPage.activity.SelectPageActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReadingNews.ViewNews.ViewNewsActivity"
+            android:hardwareAccelerated="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReadingNews.SearchYoutube.SearchYoutubeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReadingNews.SearchYoutube.YoutubePlayer"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ReadingNews.WebView.WebViewActivity"></activity>
     </application>
 
 </manifest>

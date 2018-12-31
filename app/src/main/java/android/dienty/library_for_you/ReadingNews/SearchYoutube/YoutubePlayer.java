@@ -9,9 +9,7 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
-
 import android.dienty.library_for_you.R;
-
 
 public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
@@ -19,6 +17,7 @@ public class YoutubePlayer extends YouTubeBaseActivity implements YouTubePlayer.
     YouTubePlayerView youTubePlayerView;
     String videoID;
     int REQUEST_VIDEO = 123;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

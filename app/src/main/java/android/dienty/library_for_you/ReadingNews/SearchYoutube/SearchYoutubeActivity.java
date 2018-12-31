@@ -32,7 +32,7 @@ public class SearchYoutubeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(SearchYoutubeActivity.this, YoutubePlayer.class);
-                //intent.putExtra(CONST.INTENT.VIDEO_ID,arrayItems.get(position).getId().getVideoId());
+                intent.putExtra(CONST.INTENT.VIDEO_ID,getItemYoutube.getArrayItems().get(position).getId().getVideoId());
                 startActivity(intent);
             }
         });

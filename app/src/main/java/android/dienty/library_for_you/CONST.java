@@ -25,6 +25,7 @@ public class CONST {
         public static final String PAGE_SELECTED = "PAGE_SELECTED";
         public static final String KEY_SEARCH = "KEY_SEARCH";
         public static final String VIDEO_ID = "VIDEO_ID";
+        public static final String LINK = "LINK";
 
     }
     //TypePage

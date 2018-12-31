@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.dienty.foryou.ReadNews.FeedItem;
 import android.dienty.foryou.ReadNews.TypePage;
 import android.dienty.library_for_you.CONST;
+import android.dienty.library_for_you.ReadingNews.WebView.WebViewActivity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -47,9 +48,9 @@ public class NewsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Intent intentNews = new Intent(view.getContext(), WebActivity.class);
-                //intentNews.putExtra("link", feedItems.get(position).getLink());
-                //startActivity(intentNews);
+                Intent intentNews = new Intent(view.getContext(), WebViewActivity.class);
+                intentNews.putExtra(CONST.INTENT.LINK, typePage.getFeedItemList().get(position).getLink());
+                startActivity(intentNews);
             }
         });
         return view;
