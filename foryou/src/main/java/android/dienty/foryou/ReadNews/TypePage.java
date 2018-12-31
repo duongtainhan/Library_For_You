@@ -12,7 +12,11 @@ import java.util.List;
 public class TypePage {
     private List<FeedItem> feedItemList = new ArrayList<>();
 
-    public List<FeedItem> getPageVnExpress(String urlRss) {
+    public List<FeedItem> getFeedItemList() {
+        return feedItemList;
+    }
+
+    public void getPageVnExpress(String urlRss) {
         feedItemList.clear();
         try {
             Document doc = Jsoup.connect(urlRss).get();
@@ -37,9 +41,8 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
-    public List<FeedItem> getPageDanTri(String urlRss) {
+    public void getPageDanTri(String urlRss) {
         feedItemList.clear();
         try {
             Document doc = Jsoup.connect(urlRss).get();
@@ -64,9 +67,8 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
-    public List<FeedItem> getPage24H(String urlRss) {
+    public void getPage24H(String urlRss) {
         feedItemList.clear();
         try {
             Document doc = Jsoup.connect(urlRss).get();
@@ -101,9 +103,8 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
-    public List<FeedItem> getPageKenh14(String urlRss) {
+    public void getPageKenh14(String urlRss) {
         feedItemList.clear();
         try {
             Document doc = Jsoup.connect(urlRss).get();
@@ -128,9 +129,8 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
-    public List<FeedItem> getPageVietNam(String urlRss)
+    public void getPageVietNam(String urlRss)
     {
         feedItemList.clear();
         try {
@@ -156,9 +156,8 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
-    public List<FeedItem> getPageNgoiSao(String urlRss)
+    public void getPageNgoiSao(String urlRss)
     {
         feedItemList.clear();
         try {
@@ -187,9 +186,8 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
-    public List<FeedItem> getPageGenk(String urlRss)
+    public void getPageGenk(String urlRss)
     {
         feedItemList.clear();
         try {
@@ -215,7 +213,6 @@ public class TypePage {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return feedItemList;
     }
 
 }
