@@ -8,6 +8,8 @@ import android.dienty.library_for_you.R;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.RelativeLayout;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import bo.photo.module.image_picker_module.model.Image;
 public class ShowGalleryActivity extends AppCompatActivity implements GetPathListener {
 
     RecyclerView recyclerView;
+    RelativeLayout relativeBack;
     ArrayList<String> listResource;
     ImageFileLoader imageFileLoader;
     ArrayList<File> excludedImages;
@@ -38,6 +41,7 @@ public class ShowGalleryActivity extends AppCompatActivity implements GetPathLis
 
     private void InitView() {
         recyclerView = findViewById(R.id.rv_gallery_library);
+        relativeBack = findViewById(R.id.rl_back_main);
     }
     private void InitValue() {
         isCompleted=false;
@@ -46,6 +50,12 @@ public class ShowGalleryActivity extends AppCompatActivity implements GetPathLis
         imageFileLoader = new ImageFileLoader(ShowGalleryActivity.this);
     }
     private void InitAction() {
+        relativeBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         AddPhotoAdapter adapter = new AddPhotoAdapter(listResource,ShowGalleryActivity.this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(ShowGalleryActivity.this,3);
         recyclerView.setLayoutManager(gridLayoutManager);

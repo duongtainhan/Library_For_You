@@ -14,7 +14,7 @@
         android:layout_height="@dimen/_50sdp">
         <RelativeLayout
             android:gravity="center"
-            android:id="@+id/rl_back"
+            android:id="@+id/rl_back_main"
             android:layout_centerVertical="true"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp">
@@ -27,7 +27,7 @@
         <TextView
             android:textColor="@color/white"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_toRightOf="@id/rl_back"
+            android:layout_toRightOf="@id/rl_back_main"
             android:textStyle="bold"
             android:id="@+id/tv_artwork"
             android:layout_centerVertical="true"

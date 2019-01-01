@@ -13,7 +13,7 @@
         android:background="@color/orange">
 
         <RelativeLayout
-            android:id="@+id/rl_back"
+            android:id="@+id/rl_back_choose"
             android:layout_width="@dimen/_50sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_centerVertical="true"
@@ -31,8 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_20sdp"
-            android:layout_toRightOf="@id/rl_back"
-            android:text="Main Screen"
+            android:layout_toRightOf="@id/rl_back_choose"
+            android:text="Change Photo"
             android:textColor="@color/white"
             android:textSize="@dimen/_20ssp"
             android:textStyle="bold" />
@@ -96,21 +96,25 @@
             android:background="@color/white">
 
             <ImageView
+                android:layout_marginStart="@dimen/_5sdp"
                 android:id="@+id/iv_none"
                 android:layout_width="@dimen/_55sdp"
                 android:layout_height="@dimen/_55sdp"
                 android:layout_centerVertical="true"
                 android:background="#dddbd9"
-                android:src="@drawable/ic_none" />
+                android:src="@drawable/ic_none"
+                android:layout_marginLeft="@dimen/_5sdp" />
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_background"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:id="@+id/rv_image_process"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_60sdp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/iv_none"
                 android:orientation="horizontal"
-                app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                android:layout_marginEnd="@dimen/_5sdp" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
