@@ -47,7 +47,7 @@
         <RelativeLayout
             android:layout_width="@dimen/_325sdp"
             android:layout_height="@dimen/_325sdp"
-            android:layout_centerInParent="true">
+            android:layout_marginTop="@dimen/_10sdp">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cv_main"
@@ -98,8 +98,8 @@
             <ImageView
                 android:layout_marginStart="@dimen/_5sdp"
                 android:id="@+id/iv_none"
-                android:layout_width="@dimen/_55sdp"
-                android:layout_height="@dimen/_55sdp"
+                android:layout_width="@dimen/_65sdp"
+                android:layout_height="@dimen/_65sdp"
                 android:layout_centerVertical="true"
                 android:background="#dddbd9"
                 android:src="@drawable/ic_none"
@@ -109,7 +109,7 @@
                 android:layout_marginRight="@dimen/_5sdp"
                 android:id="@+id/rv_image_process"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_60sdp"
+                android:layout_height="@dimen/_70sdp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@id/iv_none"
                 android:orientation="horizontal"
@@ -117,5 +117,12 @@
                 android:layout_marginEnd="@dimen/_5sdp" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
+    <FrameLayout
+        android:id="@+id/frameAddOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/cardProcess"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
 
 </RelativeLayout>

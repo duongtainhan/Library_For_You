@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeMain">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeOption1">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp">
+
+            <TextView
+                android:layout_width="@dimen/_75sdp"
+                android:layout_height="wrap_content"
+                android:text="Option"
+                android:textSize="@dimen/_15ssp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:id="@+id/txtOption1"/>
+            <android.support.v7.widget.AppCompatSeekBar
+                android:layout_centerInParent="true"
+                android:id="@+id/seekBarOption1"
+                android:layout_toRightOf="@id/txtOption1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginBottom="@dimen/_5sdp" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relativeOption2"
+        android:layout_above="@id/relativeOption1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="wrap_content"
+            android:text="Blue"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:id="@+id/txtOption2"/>
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/txtOption2"
+            android:id="@+id/seekBarOption2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_5sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_above="@id/relativeOption2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_25sdp"
+        android:id="@+id/relativeOption3"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="wrap_content"
+            android:text="Green"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:id="@+id/txtOption3"/>
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_centerInParent="true"
+            android:id="@+id/seekBarOption3"
+            android:layout_toRightOf="@id/txtOption3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_5sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_above="@id/relativeOption3"
+        android:layout_width="match_parent"
+        android:id="@+id/relativeOption4"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp">
+
+        <TextView
+            android:layout_width="@dimen/_75sdp"
+            android:layout_height="wrap_content"
+            android:text="Red"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:id="@+id/txtOption4"/>
+        <android.support.v7.widget.AppCompatSeekBar
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@id/txtOption4"
+            android:id="@+id/seekBarOption4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginBottom="@dimen/_5sdp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

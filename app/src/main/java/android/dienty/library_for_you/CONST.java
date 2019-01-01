@@ -20,6 +20,12 @@ public class CONST {
         public static final String WSJ = "WSJ";
     }
 
+    //Fragment
+    public static final class FRAGMENT{
+        public static final String OPTION="FRAGMENT_OPTION";
+
+    }
+
     //Intent
     public static final class INTENT{
         public static final String PAGE_SELECTED = "PAGE_SELECTED";
