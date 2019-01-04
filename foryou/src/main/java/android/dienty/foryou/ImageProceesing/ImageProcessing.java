@@ -432,5 +432,15 @@ public class ImageProcessing {
         convMatrix.Offset = 0;
         return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
     }
-
+    public static Bitmap sharpen(Bitmap src, double weight) {
+        double[][] SharpConfig = new double[][] {
+            { 0 , -2    , 0  },
+            { -2, weight, -2 },
+            { 0 , -2    , 0  }
+        };
+        ConvolutionMatrix convMatrix = new ConvolutionMatrix(3);
+        convMatrix.applyConfig(SharpConfig);
+        convMatrix.Factor = weight - 8;
+        return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
+    }
 }
