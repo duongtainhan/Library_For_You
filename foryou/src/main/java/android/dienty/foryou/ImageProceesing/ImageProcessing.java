@@ -443,4 +443,17 @@ public class ImageProcessing {
         convMatrix.Factor = weight - 8;
         return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
     }
+    public static Bitmap applyMeanRemoval(Bitmap src) {
+        double[][] MeanRemovalConfig = new double[][] {
+            { -1 , -1, -1 },
+            { -1 ,  9, -1 },
+            { -1 , -1, -1 }
+        };
+        ConvolutionMatrix convMatrix = new ConvolutionMatrix(3);
+        convMatrix.applyConfig(MeanRemovalConfig);
+        convMatrix.Factor = 1;
+        convMatrix.Offset = 0;
+        return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
+    }
+
 }
