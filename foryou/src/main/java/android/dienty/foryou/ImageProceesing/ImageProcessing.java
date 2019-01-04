@@ -455,5 +455,12 @@ public class ImageProcessing {
         convMatrix.Offset = 0;
         return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
     }
-
+    public static Bitmap smooth(Bitmap src, double value) {
+        ConvolutionMatrix convMatrix = new ConvolutionMatrix(3);
+        convMatrix.setAll(1);
+        convMatrix.Matrix[1][1] = value;
+        convMatrix.Factor = value + 8;
+        convMatrix.Offset = 1;
+        return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
+    }
 }
