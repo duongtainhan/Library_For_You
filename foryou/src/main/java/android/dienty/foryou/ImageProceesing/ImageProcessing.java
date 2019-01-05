@@ -463,4 +463,16 @@ public class ImageProcessing {
         convMatrix.Offset = 1;
         return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
     }
+    public static Bitmap emboss(Bitmap src) {
+        double[][] EmbossConfig = new double[][] {
+            { -1 ,  0, -1 },
+            {  0 ,  4,  0 },
+            { -1 ,  0, -1 }
+        };
+        ConvolutionMatrix convMatrix = new ConvolutionMatrix(3);
+        convMatrix.applyConfig(EmbossConfig);
+        convMatrix.Factor = 1;
+        convMatrix.Offset = 127;
+        return ConvolutionMatrix.computeConvolution3x3(src, convMatrix);
+    }
 }
