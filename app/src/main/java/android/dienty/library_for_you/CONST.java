@@ -23,7 +23,7 @@ public class CONST {
     //Fragment
     public static final class FRAGMENT{
         public static final String OPTION="FRAGMENT_OPTION";
-
+        public static final String BOOST="FRAGMENT_BOOST";
     }
 
     //Intent

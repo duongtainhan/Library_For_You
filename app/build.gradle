@@ -39,5 +39,5 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation project(path: ':photo_frame_module')
     //add library
-    implementation 'com.github.duongtainhan:Library_For_You:1.92'
+    implementation 'com.github.duongtainhan:Library_For_You:1.93'
 }

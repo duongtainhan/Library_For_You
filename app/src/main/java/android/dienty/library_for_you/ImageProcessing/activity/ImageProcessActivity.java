@@ -2,6 +2,8 @@ package android.dienty.library_for_you.ImageProcessing.activity;
 
 import android.dienty.foryou.ImageProceesing.ImageProcessing;
 import android.dienty.library_for_you.CONST;
+import android.dienty.library_for_you.ImageProcessing.BoostPercentChangeListener;
+import android.dienty.library_for_you.ImageProcessing.BoostRadioChangeListener;
 import android.dienty.library_for_you.ImageProcessing.ClickProcessListener;
 import android.dienty.library_for_you.ImageProcessing.CloseFragmentListener;
 import android.dienty.library_for_you.ImageProcessing.SB1ChangeListener;
@@ -10,6 +12,7 @@ import android.dienty.library_for_you.ImageProcessing.SB3ChangeListener;
 import android.dienty.library_for_you.ImageProcessing.SB4ChangeListener;
 import android.dienty.library_for_you.ImageProcessing.adapter.ListProcessAdapter;
 import android.dienty.library_for_you.ImageProcessing.fragment.OptionProcessFragment;
+import android.dienty.library_for_you.ImageProcessing.fragment.Type2Fragment;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -27,7 +30,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ImageProcessActivity extends AppCompatActivity implements ClickProcessListener, CloseFragmentListener, SB1ChangeListener, SB2ChangeListener, SB3ChangeListener, SB4ChangeListener {
+public class ImageProcessActivity extends AppCompatActivity implements ClickProcessListener, CloseFragmentListener,
+        SB1ChangeListener, SB2ChangeListener, SB3ChangeListener, SB4ChangeListener,
+        BoostRadioChangeListener, BoostPercentChangeListener {
 
     ImageView imageLibrary;
     ImageView imageNone;
@@ -38,11 +43,14 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
     OptionProcessFragment optionProcessFragment;
+    Type2Fragment type2Fragment;
     int posProcess;
     int processOption1 = 1;
     int processOption2 = 1;
     int processOption3 = 1;
     int processOption4 = 1;
+    float percentBoost = 0.1f;
+    int typeBoost=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +80,7 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
         imageNone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CloseFragmentBoost();
                 CloseFragmentOption();
                 imageLibrary.setImageBitmap(null);
                 imageLibrary.setBackground(Drawable.createFromPath(path));
@@ -101,14 +110,17 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
         listImageProcess.add(ImageProcessing.createSepiaToningEffect(bitmap, 10, 10, 10, 10));
         listImageProcess.add(ImageProcessing.doGamma(bitmap, 5, 6, 9));
         listImageProcess.add(ImageProcessing.rotate(bitmap, 30));
+        listImageProcess.add(ImageProcessing.engrave(bitmap));
+        listImageProcess.add(ImageProcessing.boost(bitmap,2,0.3f));
+        listImageProcess.add(ImageProcessing.applyFleaEffect(bitmap));
+        listImageProcess.add(ImageProcessing.applyBlackFilter(bitmap));
+        listImageProcess.add(ImageProcessing.applyGaussianBlur(bitmap));
+        listImageProcess.add(ImageProcessing.applyMeanRemoval(bitmap));
         return listImageProcess;
     }
 
     @Override
     public void onGetClick(int posProcess) {
-//        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
-//        Bitmap bitmap = BitmapFactory.decodeFile(path,bmOptions);
-//        imageLibrary.setImageBitmap(ImageProcessing.decreaseColorDepth(bitmap,10));
         this.posProcess = posProcess;
         BitmapFactory.Options bmOptions = new BitmapFactory.Options();
         Bitmap bitmap = BitmapFactory.decodeFile(path, bmOptions);
@@ -122,10 +134,12 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
                 break;
             case 2:
                 CloseFragmentOption();
+                CloseFragmentBoost();
                 imageLibrary.setImageBitmap(ImageProcessing.doGreyscale(bitmap));
                 break;
             case 3:
                 CloseFragmentOption();
+                CloseFragmentBoost();
                 imageLibrary.setImageBitmap(ImageProcessing.doInvert(bitmap));
                 break;
             case 4:
@@ -140,7 +154,34 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
             case 7:
                 AddFragmentOption(true,false,false,false,"Degree");
                 break;
-
+            case 8:
+                CloseFragmentOption();
+                CloseFragmentBoost();
+                imageLibrary.setImageBitmap(ImageProcessing.engrave(bitmap));
+                break;
+            case 9:
+                AddFragmentBoostEffect();
+                break;
+            case 10:
+                CloseFragmentOption();
+                CloseFragmentBoost();
+                imageLibrary.setImageBitmap(ImageProcessing.applyFleaEffect(bitmap));
+                break;
+            case 11:
+                CloseFragmentOption();
+                CloseFragmentBoost();
+                imageLibrary.setImageBitmap(ImageProcessing.applyBlackFilter(bitmap));
+                break;
+            case 12:
+                CloseFragmentOption();
+                CloseFragmentBoost();
+                imageLibrary.setImageBitmap(ImageProcessing.applyGaussianBlur(bitmap));
+                break;
+            case 13:
+                CloseFragmentOption();
+                CloseFragmentBoost();
+                imageLibrary.setImageBitmap(ImageProcessing.applyMeanRemoval(bitmap));
+                break;
         }
     }
 
@@ -159,11 +200,29 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
             fragmentTransaction.commit();
         }
     }
+    private void AddFragmentBoostEffect()
+    {
+        type2Fragment = new Type2Fragment(ImageProcessActivity.this);
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameAddOption,type2Fragment,CONST.FRAGMENT.BOOST);
+        fragmentTransaction.commit();
+    }
+    private void CloseFragmentBoost()
+    {
+        type2Fragment = (Type2Fragment) fragmentManager.findFragmentByTag(CONST.FRAGMENT.BOOST);
+        if(type2Fragment!=null)
+        {
+            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.remove(type2Fragment);
+            fragmentTransaction.commit();
+        }
+    }
 
     @Override
     public void onClickOutSide(boolean close) {
         if (close) {
             CloseFragmentOption();
+            CloseFragmentBoost();
         }
     }
 
@@ -200,8 +259,6 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
                     imageLibrary.setBackground(null);
                     imageLibrary.setImageBitmap(ImageProcessing.rotate(bitmap, getProcessOption1()));
                     break;
-
-
             }
         }
     }
@@ -236,7 +293,6 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
                 imageLibrary.setImageBitmap(ImageProcessing.doGamma(bitmap, getProcessOption1(),getProcessOption3(),getProcessOption2()));
                 break;
         }
-
     }
 
     @Override
@@ -267,5 +323,28 @@ public class ImageProcessActivity extends AppCompatActivity implements ClickProc
 
     public int getProcessOption4() {
         return processOption4;
+    }
+    public float getPercentBoost() {
+        return percentBoost;
+    }
+
+    public int getTypeBoost() {
+        return typeBoost;
+    }
+
+    @Override
+    public void onChangePercent(float percent) {
+        percentBoost = percent;
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        Bitmap bitmap = BitmapFactory.decodeFile(path, bmOptions);
+        imageLibrary.setImageBitmap(ImageProcessing.boost(bitmap,getTypeBoost(),getPercentBoost()));
+    }
+
+    @Override
+    public void onChangeRadio(int type) {
+        typeBoost = type;
+        BitmapFactory.Options bmOptions = new BitmapFactory.Options();
+        Bitmap bitmap = BitmapFactory.decodeFile(path, bmOptions);
+        imageLibrary.setImageBitmap(ImageProcessing.boost(bitmap,getTypeBoost(),getPercentBoost()));
     }
 }
