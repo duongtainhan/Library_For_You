@@ -38,8 +38,8 @@
             android:name=".ReadingNews.SearchYoutube.YoutubePlayer"
             android:screenOrientation="portrait" />
         <activity android:name=".ReadingNews.WebView.WebViewActivity" />
-        <activity android:name=".ImageProcessing.ImageProcessActivity" />
-        <activity android:name=".ImageProcessing.ShowGalleryActivity"></activity>
+        <activity android:name=".ImageProcessing.activity.ImageProcessActivity" />
+        <activity android:name=".ImageProcessing.activity.ShowGalleryActivity"></activity>
     </application>
 
 </manifest>

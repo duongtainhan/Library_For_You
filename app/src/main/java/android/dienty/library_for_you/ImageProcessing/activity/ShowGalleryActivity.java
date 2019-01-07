@@ -1,13 +1,14 @@
-package android.dienty.library_for_you.ImageProcessing;
+package android.dienty.library_for_you.ImageProcessing.activity;
 
 import android.content.Intent;
 import android.dienty.library_for_you.CONST;
+import android.dienty.library_for_you.ImageProcessing.adapter.AddPhotoAdapter;
+import android.dienty.library_for_you.ImageProcessing.GetPathListener;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.dienty.library_for_you.R;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 

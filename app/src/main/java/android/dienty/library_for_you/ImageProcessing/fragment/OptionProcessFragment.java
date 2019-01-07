@@ -1,7 +1,8 @@
-package android.dienty.library_for_you.ImageProcessing;
+package android.dienty.library_for_you.ImageProcessing.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.dienty.library_for_you.ImageProcessing.CloseFragmentListener;
 import android.dienty.library_for_you.R;
 import android.os.Bundle;
 import android.support.annotation.NonNull;

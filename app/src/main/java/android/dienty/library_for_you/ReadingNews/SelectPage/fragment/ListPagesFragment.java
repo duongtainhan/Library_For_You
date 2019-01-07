@@ -63,7 +63,7 @@ public class ListPagesFragment extends Fragment {
         else
         {
             List<PageItem> pageItems = new ArrayList<>();
-            pageItems.add(new PageItem(CONST.NAME_PAGE.VN_EXPRESS,R.drawable.vn_express));
+            pageItems.add(new PageItem(CONST.NAME_PAGE.NYTIMES,R.drawable.nytimes));
             pageItems.add(new PageItem(CONST.NAME_PAGE.DAN_TRI,R.drawable.dan_tri));
             pageItems.add(new PageItem(CONST.NAME_PAGE.HAI_TU_GIO,R.drawable.hai_tu_gio));
             pageItems.add(new PageItem(CONST.NAME_PAGE.KENH_14,R.drawable.kenh_14));

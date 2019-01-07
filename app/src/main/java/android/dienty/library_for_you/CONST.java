@@ -52,6 +52,7 @@ public class CONST {
             public static final int vietnam_net = 17;
             public static final int ngoi_sao = 24;
             public static final int genk = 7;
+            public static final int nytimes = 16;
         }
         public static final class url
         {
@@ -197,6 +198,23 @@ public class CONST {
                     "http://gamek.vn/mobile-social.rss",
                     "http://gamek.vn/gaming-gear.rss",
                     "http://gamek.vn/manga-film.rss"
+            };
+            public static final String nytimes[]={
+                    "http://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/US.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/NYRegion.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Sports.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Health.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Arts.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Travel.xml",
+                    "https://6thfloor.blogs.nytimes.com/feed/",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/RealEstate.xml",
+                    "http://rss.nytimes.com/services/xml/rss/nyt/Automobiles.xml"
             };
         }
         public static final class title
@@ -362,6 +380,24 @@ public class CONST {
                     "Mobile",
                     "Gaming Gear",
                     "Manga Film"
+            };
+            public  static final String nytimes[]={
+                    "Home Page",
+                    "World",
+                    "U.S",
+                    "N.Y/Region",
+                    "Business",
+                    "Technology",
+                    "Sports",
+                    "Science",
+                    "Health",
+                    "Arts",
+                    "Style",
+                    "Travel",
+                    "Magazine",
+                    "Jobs",
+                    "Real Estate",
+                    "Autos"
             };
         }
     }

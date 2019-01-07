@@ -1,11 +1,10 @@
-package android.dienty.library_for_you.ImageProcessing;
+package android.dienty.library_for_you.ImageProcessing.adapter;
 
 import android.content.Context;
+import android.dienty.library_for_you.ImageProcessing.ClickProcessListener;
 import android.dienty.library_for_you.R;
 import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;

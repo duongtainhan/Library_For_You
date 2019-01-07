@@ -5,7 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.dienty.library_for_you.ImageProcessing.ShowGalleryActivity;
+import android.dienty.library_for_you.ImageProcessing.activity.ShowGalleryActivity;
 import android.dienty.library_for_you.ReadingNews.SelectPage.activity.SelectPageActivity;
 import android.net.Uri;
 import android.os.Build;
