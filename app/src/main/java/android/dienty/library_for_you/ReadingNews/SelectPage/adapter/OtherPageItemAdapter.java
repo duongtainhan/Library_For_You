@@ -49,27 +49,20 @@ public class OtherPageItemAdapter extends RecyclerView.Adapter<OtherPageItemAdap
                         page_selected=CONST.NAME_PAGE.NYTIMES;
                         break;
                     case 1:
-                        page_selected=CONST.NAME_PAGE.DAN_TRI;
+                        page_selected=CONST.NAME_PAGE.WASHINGTON_POST;
                         break;
                     case 2:
-                        page_selected=CONST.NAME_PAGE.HAI_TU_GIO;
+                        page_selected=CONST.NAME_PAGE.DAILY_MAIL;
                         break;
                     case 3:
-                        page_selected=CONST.NAME_PAGE.KENH_14;
+                        page_selected=CONST.NAME_PAGE.HUFF_POST;
                         break;
                     case 4:
-                        page_selected=CONST.NAME_PAGE.VIETNAM_NET;
-                        break;
-                    case 5:
-                        page_selected=CONST.NAME_PAGE.NGOI_SAO;
-                        break;
-                    case 6:
-                        page_selected=CONST.NAME_PAGE.GENK;
+                        page_selected=CONST.NAME_PAGE.WSJ;
                         break;
                 }
                 Intent intent = new Intent(context,ViewNewsActivity.class);
                 intent.putExtra(CONST.INTENT.PAGE_SELECTED,page_selected);
-                Log.d("GET_PAGE",page_selected);
                 context.startActivity(intent);
             }
         });
