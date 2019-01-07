@@ -104,7 +104,7 @@ public class TypePage {
             e.printStackTrace();
         }
     }
-    public void getPageKenh14(String urlRss) {
+    public void getPageTuoiTre(String urlRss) {
         feedItemList.clear();
         try {
             Document doc = Jsoup.connect(urlRss).get();
