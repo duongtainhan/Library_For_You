@@ -49,15 +49,12 @@ public class OtherPageItemAdapter extends RecyclerView.Adapter<OtherPageItemAdap
                         page_selected=CONST.NAME_PAGE.NYTIMES;
                         break;
                     case 1:
-                        page_selected=CONST.NAME_PAGE.WASHINGTON_POST;
-                        break;
-                    case 2:
                         page_selected=CONST.NAME_PAGE.DAILY_MAIL;
                         break;
-                    case 3:
+                    case 2:
                         page_selected=CONST.NAME_PAGE.HUFF_POST;
                         break;
-                    case 4:
+                    case 3:
                         page_selected=CONST.NAME_PAGE.WSJ;
                         break;
                 }
