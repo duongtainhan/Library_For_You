@@ -30,7 +30,7 @@ SearchYoutubeActivity.this: context or activity contain listview <br>
 listVideo: listView to contain data <br>
 
 ## **Image Processing**
-ImageProcessing.doGreyscale(bitmap); <br>
+**ImageProcessing.doGreyscale(bitmap);** <br>
 Input: bitmap <br>
 Output: bitmap is processed <br>
 
