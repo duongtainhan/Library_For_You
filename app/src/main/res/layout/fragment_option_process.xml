@@ -27,6 +27,7 @@
             <android.support.v7.widget.AppCompatSeekBar
                 android:layout_centerInParent="true"
                 android:id="@+id/seekBarOption1"
+                android:progress="1"
                 android:layout_toRightOf="@id/txtOption1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_25sdp"
@@ -54,6 +55,7 @@
             android:layout_centerInParent="true"
             android:layout_toRightOf="@id/txtOption2"
             android:id="@+id/seekBarOption2"
+            android:progress="1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_25sdp"
             android:layout_marginBottom="@dimen/_5sdp" />
@@ -81,6 +83,7 @@
             android:id="@+id/seekBarOption3"
             android:layout_toRightOf="@id/txtOption3"
             android:layout_width="match_parent"
+            android:progress="1"
             android:layout_height="@dimen/_25sdp"
             android:layout_marginBottom="@dimen/_5sdp" />
 
@@ -106,6 +109,7 @@
             android:layout_centerInParent="true"
             android:layout_toRightOf="@id/txtOption4"
             android:id="@+id/seekBarOption4"
+            android:progress="1"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_25sdp"
             android:layout_marginBottom="@dimen/_5sdp" />
