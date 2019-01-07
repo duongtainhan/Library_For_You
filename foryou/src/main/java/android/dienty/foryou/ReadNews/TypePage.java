@@ -214,5 +214,22 @@ public class TypePage {
             e.printStackTrace();
         }
     }
+    public void getPageNytimes(String urlRss)
+    {
+        feedItemList.clear();
+        try {
+            Document doc = Jsoup.connect(urlRss).get();
+            Elements elements = doc.select("item");
+            for (Element item : elements) {
+                String title = item.select("title").text();
+                String link = item.select("link").text();
+                String description = item.select("description").text();
+                String pubDate = item.select("pubDate").text();
+                feedItemList.add(new FeedItem(title, description, pubDate, null, link));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

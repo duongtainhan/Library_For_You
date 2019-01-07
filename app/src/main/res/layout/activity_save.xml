@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fce4c3">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_rela_top"
+        android:background="@color/orange"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp">
+        <RelativeLayout
+            android:gravity="center"
+            android:id="@+id/rl_back"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp">
+            <ImageView
+                android:src="@drawable/ic_back"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/tv_home"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_16ssp"
+            android:text="Home"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_marginTop="@dimen/_45sdp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_rela_top">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv_getSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            app:cardElevation="@dimen/_10sdp">
+
+            <ImageView
+                android:scaleType="fitXY"
+                android:id="@+id/iv_review"
+                android:layout_width="@dimen/_270sdp"
+                android:layout_height="@dimen/_270sdp">
+            </ImageView>
+
+
+        </android.support.v7.widget.CardView>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/tv_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</RelativeLayout>
