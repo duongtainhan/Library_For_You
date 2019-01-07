@@ -11,7 +11,7 @@ Feel free to use it all you want in your Android apps provided that you cite thi
 * Image processing: Dividing the bitmap into a 2-dimensional array, increasing or decreasing the three major RGB colors
 
 # **HOW TO USE**
-![image](https://user-images.githubusercontent.com/40598538/50789010-918d0c80-12ed-11e9-9417-2a9134f39acb.png)
+![image](https://user-images.githubusercontent.com/40598538/50790196-d8303600-12f0-11e9-8e34-cbfa6faaebbe.png)
 
 ## **_Get all data from RSS news page:_**
 
